@@ -1,0 +1,9 @@
+# /dev/sdb5
+UUID=7192c2b1-15e1-4e9a-b5e2-51c545d6b3e6	/         	ext4      	rw,relatime,data=ordered	0 1
+
+# /dev/sda1
+#UUID=0C14D0E654D51290	/share         	ntfs      	rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other,blksize=4096	0 0
+
+# /dev/sdb6
+UUID=363e4fc2-59b2-439c-a8f2-ee97625628b6	none      	swap      	defaults  	0 0
+

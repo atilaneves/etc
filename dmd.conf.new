@@ -1,0 +1,2 @@
+[Environment]
+DFLAGS=-I/home/aalvesne/coding/d/dlang/druntime/import -I/home/aalvesne/coding/d/dlang/phobos -L-L/home/aalvesne/coding/d/dlang/phobos/generated/linux/release/64 -L-L/usr/lib -L-L/usr/lib32 -L--export-dynamic -L--demangle=dlang
