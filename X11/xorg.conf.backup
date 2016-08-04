@@ -53,15 +53,12 @@ EndSection
 Section "Screen"
 
 # Removed Option "metamodes" "GPU-c0ac5fc0-1550-552b-cbb5-83cec229d1b5.DP-0: nvidia-auto-select +0+0, GPU-67b4fad2-e4be-f315-32f1-946a0943db75.DP-0: nvidia-auto-select +3840+0"
-# Removed Option "metamodes" "GPU-c0ac5fc0-1550-552b-cbb5-83cec229d1b5.GPU-0.DP-0: nvidia-auto-select +3840+0, GPU-67b4fad2-e4be-f315-32f1-946a0943db75.GPU-1.DP-0: nvidia-auto-select +0+0"
-# Removed Option "SLI" "on"
     Identifier     "Screen0"
     Device         "Device0"
     Monitor        "Monitor0"
     DefaultDepth    24
     Option         "Stereo" "0"
-    Option         "nvidiaXineramaInfoOrder" "DFP-2"
-    Option         "metamodes" "GPU-c0ac5fc0-1550-552b-cbb5-83cec229d1b5.DP-0: nvidia-auto-select +3840+0, GPU-67b4fad2-e4be-f315-32f1-946a0943db75.DP-0: nvidia-auto-select +0+0"
+    Option         "metamodes" "GPU-c0ac5fc0-1550-552b-cbb5-83cec229d1b5.GPU-0.DP-0: nvidia-auto-select +3840+0, GPU-67b4fad2-e4be-f315-32f1-946a0943db75.GPU-1.DP-0: nvidia-auto-select +0+0"
     Option         "MultiGPU" "Off"
     Option         "SLI" "off"
     Option         "BaseMosaic" "on"
