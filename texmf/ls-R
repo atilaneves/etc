@@ -28,10 +28,13 @@ generic
 
 ./tex/generic:
 config
+tex-ini-files
 
 ./tex/generic/config:
 language.dat
 language.def
+
+./tex/generic/tex-ini-files:
 pdftexconfig.tex
 
 ./ttf2pk:
