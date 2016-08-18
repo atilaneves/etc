@@ -37,9 +37,6 @@
 #    start with "#! " in this file.
 
 #
-# from aleph:
-aleph aleph - *aleph.ini
-lamed aleph language.dat *lambda.ini
 #
 # from amstex:
 amstex pdftex - -translate-file=cp227.tcx *amstex.ini

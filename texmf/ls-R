@@ -45,6 +45,7 @@ fmtutil.cnf
 mktex.cnf
 texmf.cnf
 updmap.cfg
+updmap-hdr.cfg
 
 ./xdvi:
 XDvi
