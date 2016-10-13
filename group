@@ -54,3 +54,4 @@ plugdev:x:1000:
 systemd-coredump:x:995:
 docker:x:994:aalvesne,atila
 lxd:x:1001:atila
+dnsmasq:x:993:

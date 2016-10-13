@@ -53,4 +53,4 @@ vboxusers:!!::
 plugdev:!::
 systemd-coredump:!!::
 docker:!!::aalvesne,atila
-lxd:!::
+lxd:!::atila
