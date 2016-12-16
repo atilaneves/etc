@@ -56,7 +56,7 @@ production: &base
       #- 2001:0db8::/32
 
     # Uncomment and customize if you can't use the default user to run GitLab (default: 'git')
-    user: gitlab
+    # user: git
 
     ## Date & Time settings
     # Uncomment and customize if you want to change the default time zone of GitLab application.
@@ -416,7 +416,7 @@ production: &base
 
   # Shared file storage settings
   shared:
-    path: /var/lib/gitlab/shared # Default: shared
+    # path: /mnt/gitlab # Default: shared
 
 
   #
@@ -429,7 +429,7 @@ production: &base
   # least. This setting is fed to 'rm -rf' in
   # db/migrate/20151023144219_remove_satellites.rb
   satellites:
-    path: /var/lib/gitlab/satellites/
+    path: /home/git/gitlab-satellites/
 
   ## Repositories settings
   repositories:
@@ -438,11 +438,11 @@ production: &base
     # gitlab-shell invokes Dir.pwd inside the repository path and that results
     # real path not the symlink.
     storages: # You must have at least a `default` storage path.
-      default: /var/lib/gitlab/repositories/
+      default: /home/git/repositories/
 
   ## Backup settings
   backup:
-    path: "/var/lib/gitlab/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
+    path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
     # archive_permissions: 0640 # Permissions for the resulting backup.tar file (default: 0600)
     # keep_time: 604800   # default: 0 (forever) (in seconds)
     # pg_schema: public     # default: nil, it means that all schemas will be backed up
@@ -463,8 +463,8 @@ production: &base
 
   ## GitLab Shell settings
   gitlab_shell:
-    path: /usr/share/webapps/gitlab-shell/
-    hooks_path: /usr/share/webapps/gitlab-shell/hooks/
+    path: /home/git/gitlab-shell/
+    hooks_path: /home/git/gitlab-shell/hooks/
 
     # File that contains the secret key for verifying access for gitlab-shell.
     # Default is '.gitlab_shell_secret' relative to Rails.root (i.e. root of the GitLab app).

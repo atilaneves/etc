@@ -27,3 +27,4 @@ systemd-coredump:x:995:995:systemd Core Dumper:/:/sbin/nologin
 dnsmasq:x:993:993:dnsmasq daemon:/:/sbin/nologin
 redis:x:992:992::/var/lib/redis:/bin/false
 gitlab:x:105:105::/var/lib/gitlab:/usr/share/webapps/gitlab-shell/bin/gitlab-shell
+gitlab-runner:x:107:107:GitLab Runner:/var/lib/gitlab-runner:/sbin/nologin
