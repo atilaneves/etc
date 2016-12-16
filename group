@@ -58,3 +58,4 @@ dnsmasq:x:993:
 redis:x:992:
 gitlab:x:105:
 gitlab-runner:x:107:
+postgres:x:88:
