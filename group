@@ -55,3 +55,6 @@ systemd-coredump:x:995:
 docker:x:994:aalvesne,atila
 lxd:x:1001:atila
 dnsmasq:x:993:
+redis:x:992:
+gitlab:x:105:
+gitlab-runner:x:107:
