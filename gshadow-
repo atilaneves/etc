@@ -58,3 +58,4 @@ dnsmasq:!!::
 redis:!::
 gitlab:!::
 gitlab-runner:!!::
+postgres:!::
