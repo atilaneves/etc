@@ -59,3 +59,4 @@ redis:x:992:git
 gitlab:x:105:
 gitlab-runner:x:107:
 postgres:x:88:
+usbmux:x:140:
