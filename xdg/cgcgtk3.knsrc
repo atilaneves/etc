@@ -1,4 +1,29 @@
 [KNewStuff3]
+Name=GTK 3.x Themes
+Name[ca]=Temes GTK 3.x
+Name[ca@valencia]=Temes GTK 3.x
+Name[de]=GTK 3.x-Designs
+Name[el]=Θέματα GTK 3.x
+Name[en_GB]=GTK 3.x Themes
+Name[es]=Temas de GTK 3.x
+Name[fi]=GTK 3.x-teemat
+Name[it]=Temi GTK 3.x
+Name[ko]=GTK 3.x 테마
+Name[nl]=GTK 3.x thema's
+Name[nn]=GTK 3.x-tema
+Name[pl]=Wygląd GTK 3.x
+Name[pt]=Temas do GTK 3.x
+Name[sk]=Témy GTK 3.x
+Name[sr]=ГТК 3.x теме
+Name[sr@ijekavian]=ГТК 3.x теме
+Name[sr@ijekavianlatin]=GTK 3.x teme
+Name[sr@latin]=GTK 3.x teme
+Name[sv]=GTK 3.x-teman
+Name[uk]=Теми GTK 3.x
+Name[x-test]=xxGTK 3.x Themesxx
+Name[zh_CN]=GTK 3.x 主题
+Name[zh_TW]=GTK 3.x 主題
+
 Categories=GTK 3.x Theme/Style
 Uncompress=always
 InstallPath=.themes
