@@ -7,7 +7,7 @@ Info HP OfficeJet 3830 series
 MakeModel HP Officejet 3830 Series hpijs, 3.16.9
 DeviceURI socket://192.168.1.108:9100
 State Idle
-StateTime 1485526398
+StateTime 1485526425
 ConfigTime 1478945070
 Type 8425484
 Accepting Yes
@@ -22,5 +22,5 @@ Attribute marker-colors none,none
 Attribute marker-levels -1,-1
 Attribute marker-names tri-color ink cartridge HP unknown,black ink cartridge HP unknown
 Attribute marker-types ink,ink
-Attribute marker-change-time 1485526399
+Attribute marker-change-time 1485526425
 </Printer>
