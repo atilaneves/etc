@@ -2,6 +2,7 @@
 Name=Window Manager Scripts
 Name[ca]=Scripts del gestor de finestres
 Name[ca@valencia]=Scripts del gestor de finestres
+Name[cs]=Skripty správce oken
 Name[da]=Vindueshåndteringsscripts
 Name[de]=Fensterverwaltungs-Skripte
 Name[el]=Σενάρια διαχειριστή παραθύρων
@@ -14,6 +15,7 @@ Name[nl]=Scripts van vensterbeheerder
 Name[nn]=Skript for vindaugshandsamar
 Name[pl]=Skrypty zarządzania oknami
 Name[pt]=Programas do Gestor de Janelas
+Name[pt_BR]=Scripts do gerenciador de janelas
 Name[ru]=Сценарии для диспетчера окон KWin
 Name[sk]=Skripty správcu okien
 Name[sr]=Скрипте менаџера прозора
