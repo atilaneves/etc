@@ -29,3 +29,4 @@ redis:x:992:992::/var/lib/redis:/bin/false
 gitlab:x:105:105::/var/lib/gitlab:/usr/share/webapps/gitlab-shell/bin/gitlab-shell
 gitlab-runner:x:107:107:GitLab Runner:/var/lib/gitlab-runner:/sbin/nologin
 postgres:x:88:88:PostgreSQL user:/var/lib/postgres:/bin/bash
+usbmux:x:140:140:usbmux user:/:/sbin/nologin
