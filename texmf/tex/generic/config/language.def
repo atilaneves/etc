@@ -2,7 +2,7 @@
 % Note: the first line of this file must match the corresponding line
 % in "etex.src" and "etexdefs.lib", otherwise fallback will be used.
 
-% $Id: language.us.def 29720 2013-04-07 18:47:47Z karl $
+% $Id: language.us.def 18737 2010-06-04 17:09:02Z karl $
 % language.us.def (and the start of language.def)
 % - initial hyphenation patterns.
 
@@ -25,10 +25,10 @@
                                          %%% line of the file
 
 % from dehyph-exptl:
-\addlanguage{german-x-2014-05-21}{dehypht-x-2014-05-21.tex}{}{2}{2}
-\addlanguage{german-x-latest}{dehypht-x-2014-05-21.tex}{}{2}{2}
-\addlanguage{ngerman-x-2014-05-21}{dehyphn-x-2014-05-21.tex}{}{2}{2}
-\addlanguage{ngerman-x-latest}{dehyphn-x-2014-05-21.tex}{}{2}{2}
+\addlanguage{german-x-2017-03-31}{dehypht-x-2017-03-31.tex}{}{2}{2}
+\addlanguage{german-x-latest}{dehypht-x-2017-03-31.tex}{}{2}{2}
+\addlanguage{ngerman-x-2017-03-31}{dehyphn-x-2017-03-31.tex}{}{2}{2}
+\addlanguage{ngerman-x-latest}{dehyphn-x-2017-03-31.tex}{}{2}{2}
 % from hyphen-afrikaans:
 \addlanguage{afrikaans}{loadhyph-af.tex}{}{1}{2}
 % from hyphen-ancientgreek:
