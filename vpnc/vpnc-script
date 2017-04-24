@@ -130,6 +130,9 @@ elif [ -x /sbin/netconfig ]; then # tool on Suse after 11.1
 elif [ -x /sbin/modify_resolvconf ]; then # Mandatory tool on Suse earlier than 11.1
 	MODIFYRESOLVCONF=modify_resolvconf_suse
 	RESTORERESOLVCONF=restore_resolvconf_suse
+elif [ -x /usr/sbin/unbound-control ] && /usr/sbin/unbound-control status > /dev/null 2>&1; then
+	MODIFYRESOLVCONF=modify_resolvconf_unbound
+	RESTORERESOLVCONF=restore_resolvconf_unbound
 else # Generic for any OS
 	MODIFYRESOLVCONF=modify_resolvconf_generic
 	RESTORERESOLVCONF=restore_resolvconf_generic
@@ -557,6 +560,24 @@ restore_resolvconf_manager() {
 	/usr/sbin/resolvconf -d $TUNDEV
 }
 
+# === resolv.conf handling via unbound =========
+
+modify_resolvconf_unbound() {
+	if [ -n "$CISCO_DEF_DOMAIN" ]; then
+		/usr/sbin/unbound-control forward_add +i ${CISCO_DEF_DOMAIN} ${INTERNAL_IP4_DNS}
+		/usr/sbin/unbound-control flush_requestlist
+		/usr/sbin/unbound-control flush_zone ${CISCO_DEF_DOMAIN}
+	fi
+}
+
+restore_resolvconf_unbound() {
+	if [ -n "$CISCO_DEF_DOMAIN" ]; then
+		/usr/sbin/unbound-control forward_remove +i ${CISCO_DEF_DOMAIN}
+		/usr/sbin/unbound-control flush_zone ${CISCO_DEF_DOMAIN}
+		/usr/sbin/unbound-control flush_requestlist
+	fi
+}
+
 # ========= Toplevel state handling  =======================================
 
 kernel_is_2_6_or_above() {
@@ -636,7 +657,7 @@ do_connect() {
 			eval NETWORK="\${CISCO_SPLIT_INC_${i}_ADDR}"
 			eval NETMASK="\${CISCO_SPLIT_INC_${i}_MASK}"
 			eval NETMASKLEN="\${CISCO_SPLIT_INC_${i}_MASKLEN}"
-			if [ $NETWORK != "0.0.0.0" ]; then
+			if [ "$NETWORK" != "0.0.0.0" ]; then
 				set_network_route "$NETWORK" "$NETMASK" "$NETMASKLEN"
 			else
 				set_default_route
@@ -683,7 +704,7 @@ do_disconnect() {
 			eval NETWORK="\${CISCO_SPLIT_INC_${i}_ADDR}"
 			eval NETMASK="\${CISCO_SPLIT_INC_${i}_MASK}"
 			eval NETMASKLEN="\${CISCO_SPLIT_INC_${i}_MASKLEN}"
-			if [ $NETWORK != "0.0.0.0" ]; then
+			if [ "$NETWORK" != "0.0.0.0" ]; then
 				# FIXME: This doesn't restore previously overwritten
 				#        routes.
 				del_network_route "$NETWORK" "$NETMASK" "$NETMASKLEN"
@@ -722,6 +743,31 @@ do_disconnect() {
 	if [ -n "$INTERNAL_IP4_DNS" ]; then
 		$RESTORERESOLVCONF
 	fi
+
+
+	if [ -n "$IPROUTE" ]; then
+		if [ -n "$INTERNAL_IP4_ADDRESS" ]; then
+			$IPROUTE addr del "$INTERNAL_IP4_ADDRESS/255.255.255.255" peer "$INTERNAL_IP4_ADDRESS" dev "$TUNDEV"
+		fi
+		# If the netmask is provided, it contains the address _and_ netmask
+		if [ -n "$INTERNAL_IP6_ADDRESS" ] && [ -z "$INTERNAL_IP6_NETMASK" ]; then
+			INTERNAL_IP6_NETMASK="$INTERNAL_IP6_ADDRESS/128"
+		fi
+		if [ -n "$INTERNAL_IP6_NETMASK" ]; then
+			$IPROUTE -6 addr del $INTERNAL_IP6_NETMASK dev $TUNDEV
+		fi
+	else
+		if [ -n "$INTERNAL_IP4_ADDRESS" ]; then
+			ifconfig "$TUNDEV" 0.0.0.0
+		fi
+		if [ -n "$INTERNAL_IP6_ADDRESS" ] && [ -z "$INTERNAL_IP6_NETMASK" ]; then
+			INTERNAL_IP6_NETMASK="$INTERNAL_IP6_ADDRESS/128"
+		fi
+		if [ -n "$INTERNAL_IP6_NETMASK" ]; then
+			ifconfig "$TUNDEV" inet6 del $INTERNAL_IP6_NETMASK
+		fi
+	fi
+
 	destroy_tun_device
 }
 
